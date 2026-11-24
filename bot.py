@@ -35,9 +35,8 @@ BOT_TOKEN = os.getenv("BOT_TOKEN")
 RENDER_EXTERNAL_URL = os.getenv("RENDER_EXTERNAL_URL")
 PORT = int(os.getenv("PORT", "10000"))
 
-# Remplace ces deux liens par tes vrais liens.
+# Lien de la conversation privée (OnlyChat).
 TELEGRAM_PRIVATE_LINK = "https://t.me/Valentinabennz"
-FANVUE_LINK = "https://fanvue.com/valentina_benzz/fv-1"
 WELCOME_IMAGE = Path(__file__).parent / "assets" / "welcome.jpg"
 
 
@@ -63,21 +62,15 @@ async def start(
         "Bienvenue dans mon univers ✨\n\n"
         "Sur mon canal Telegram, je partage régulièrement des photos, "
         "des vidéos, des coulisses et différents moments de mon quotidien. 🌸\n\n"
-        "Pour découvrir davantage de contenu exclusif, tu peux également "
-        "me contacter en privé ou me rejoindre sur Fanvue. 🔒💖"
+        "Et si tu veux me parler, écris-moi en privé : "
+        "touche le bouton juste en dessous 👇💖"
     )
 
     keyboard = [
         [
             InlineKeyboardButton(
-                "💌 Me contacter en privé",
+                "💌 M'écrire en privé",
                 url=TELEGRAM_PRIVATE_LINK,
-            )
-        ],
-        [
-            InlineKeyboardButton(
-                "⭐ Découvrir mon Fanvue",
-                url=FANVUE_LINK,
             )
         ],
     ]
@@ -111,27 +104,16 @@ async def welcome_new_member(
     welcome_message = (
         f"💕 Bienvenue dans mon petit univers, {first_name} ! 🌸\n\n"
         "Je suis vraiment heureuse de t'accueillir ici. Merci d'avoir rejoint mon canal Telegram. 🥰\n\n"
-        "✨ Ici, tu découvriras chaque jour un aperçu de mon quotidien : selfies, photos inédites, petites vidéos, moments spontanés, coulisses, pensées du moment et bien d'autres surprises. J'aime partager avec vous ces instants qui rendent chaque journée unique. 💖\n\n"
-        "🔒 Tu souhaites découvrir encore plus de contenu exclusif ?\n\n"
-        "Il te suffit de cliquer sur l'un des boutons ci-dessous :\n\n"
-        "💌 Me contacter en privé sur Telegram\n"
-        "⭐ Découvrir mon univers exclusif sur Fanvue\n\n"
-        "❤️ Je serai ravie d'échanger avec toi en privé lorsque je le peux, et Fanvue te permettra de découvrir une autre facette de mon univers à travers des contenus encore plus exclusifs.\n\n"
-        "🌷 J'espère que tu te sentiras ici comme chez toi. Merci pour ton soutien, ta bienveillance et ta présence au quotidien.\n\n"
-        "💖 Passe régulièrement sur le canal, de nouvelles publications arrivent très souvent… tu pourrais bien y découvrir quelques surprises. 😉✨"
+        "✨ Ici, tu découvriras chaque jour un aperçu de mon quotidien : selfies, photos inédites, petites vidéos, coulisses du bureau et bien d'autres surprises. 💖\n\n"
+        "💌 Et si tu veux me parler, écris-moi en privé : touche le bouton juste en dessous 👇\n\n"
+        "💖 Passe régulièrement sur le canal, de nouvelles publications arrivent très souvent… 😉✨"
     )
 
     keyboard = [
         [
             InlineKeyboardButton(
-                "💌 Me contacter en privé",
+                "💌 M'écrire en privé",
                 url=TELEGRAM_PRIVATE_LINK,
-            )
-        ],
-        [
-            InlineKeyboardButton(
-                "⭐ Découvrir mon Fanvue",
-                url=FANVUE_LINK,
             )
         ],
     ]
